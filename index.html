@@ -7,7 +7,7 @@
   <style>
     body {
       font-family: 'Arial', sans-serif;
-      background-color: #000; /* Black background */
+      background: linear-gradient(135deg, #0e0e0e, #1c1c1c); /* Gradient background */
       color: #fff; /* White text color for contrast */
       margin: 0;
       padding: 0;
@@ -17,6 +17,25 @@
       min-height: 100vh;
       flex-direction: column;
       text-align: center;
+      overflow: hidden;
+      cursor: url('custom-cursor.png'), auto; /* Custom cursor */
+    }
+    @keyframes backgroundAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba(255, 0, 0, 0.2), rgba(0, 255, 0, 0.2), rgba(0, 0, 0, 0.2));
+      z-index: -1;
+      animation: backgroundAnimation 10s ease infinite;
+      background-size: 200% 200%;
     }
     .container {
       width: 90%;
@@ -24,27 +43,27 @@
       padding: 20px;
       border: 2px solid #e74c3c; /* Red border for contrast */
       border-radius: 15px;
-      background: linear-gradient(145deg, #222, #333); /* Gradient background */
+      background: rgba(34, 34, 34, 0.85); /* Semi-transparent background */
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Deep shadow for depth */
       animation: fadeIn 2s ease-out;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      position: relative;
+      z-index: 1;
+      margin: 20px; /* Responsive margin */
     }
     h1 {
-      font-size: 3em;
+      font-size: 2.5em; /* Responsive font size */
       margin-bottom: 20px;
       color: #e74c3c; /* Bright red for the title */
       text-transform: uppercase;
       letter-spacing: 3px;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Shadow for text depth */
     }
     .iframe-container {
       position: relative;
       padding-bottom: 56.25%; /* 16:9 aspect ratio */
       height: 0;
       overflow: hidden;
-      max-width: 100%;
+      width: 100%;
       background: #27ae60; /* Green background */
       border: 1px solid #27ae60; /* Green border */
       border-radius: 8px;
@@ -52,7 +71,7 @@
       transition: transform 0.3s;
     }
     .iframe-container:hover {
-      transform: scale(1.05);
+      transform: scale(1.05) rotate(1deg);
     }
     .iframe-container iframe {
       position: absolute;
@@ -67,14 +86,38 @@
       margin-top: 30px;
       font-size: 1em;
       color: #bdc3c7; /* Light grey for footer text */
+      position: relative;
+      z-index: 1;
     }
     footer a {
       color: #e74c3c; /* Red for links */
       text-decoration: none;
       font-weight: bold;
+      transition: color 0.3s;
     }
     footer a:hover {
-      text-decoration: underline;
+      color: #27ae60; /* Green on hover */
+    }
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2em; /* Smaller font size on tablets and phones */
+      }
+      .container {
+        width: 100%;
+        padding: 15px;
+        border-width: 1px;
+      }
+      footer {
+        font-size: 0.9em;
+      }
+    }
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.5em; /* Even smaller font size on smaller devices */
+      }
+      footer {
+        font-size: 0.8em;
+      }
     }
   </style>
 </head>
