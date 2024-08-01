@@ -1,13 +1,78 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Embedded Kaburakuria-Sema</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>An AI by Kabura Kuria</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #000; /* Black background */
+      margin: 0;
+      padding: 0;
+      color: #fff; /* White text color for contrast */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-direction: column;
+      text-align: center;
+    }
+    .container {
+      width: 90%;
+      max-width: 850px;
+      padding: 20px;
+      border: 2px solid #fff; /* White border for container */
+      border-radius: 10px;
+      background-color: #222; /* Dark background for contrast */
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #e74c3c; /* Red color for title */
+    }
+    .iframe-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      background: #27ae60; /* Green background */
+      border: 1px solid #27ae60; /* Green border */
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Deeper shadow for effect */
+    }
+    .iframe-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    footer {
+      margin-top: 20px;
+      font-size: 0.9em;
+      color: #bdc3c7; /* Light grey for footer text */
+    }
+    footer a {
+      color: #e74c3c; /* Red for links */
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-  <iframe src="https://kaburakuria-sema.hf.space"
-          frameborder="0"
-          width="850"
-          height="450">
-  </iframe>
+  <div class="container">
+    <h1>An AI by Kabura Kuria</h1>
+    <div class="iframe-container">
+      <iframe src="https://kaburakuria-sema.hf.space" allowfullscreen></iframe>
+    </div>
+    <footer>
+      <p>Explore more projects by <a href="https://your-portfolio-link.com">Kabura Kuria</a></p>
+    </footer>
+  </div>
 </body>
 </html>
